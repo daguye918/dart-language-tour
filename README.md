@@ -1,8 +1,11 @@
 #Dart语言旅行
 
-本章节向你展示了怎样使用 Dart 的每一个主要功能，从变量和运算符，到类和库，我们假设你已经知道如何使用用另一种语言编程。
+Dart 是谷歌在2011年推出的编程语言，是一种结构化 Web 编程语言，允许用户通过 Chromium 中所整合的虚拟机（Dart VM）直接运行 Dart 语言编写的程序，免去了单独编译的步骤。以后这些程序将从 Dart VM 更快的性能与较低的启动延迟中受益。Dart 从设计之初就为配合现代 web 整体运作而考虑，开发团队也同时在持续改进 Dart 向 JavaScript 转换的快速编译器。Dart VM 以及现代 JavaScript 引擎（V8 等）都是 Dart 语言的首选目标平台。
 
+## 适用人群
 
-注：在使用每个功能时，在 Dart Editor 中，创建一个命令行项目，作为[启动和运行](https://www.dartlang.org/docs/dart-up-and-running/ch01.html#up-and-running)时的说明。
+这个教程设计为了让对 Dart 感兴趣的软件专业人士更加完整的了解Dart的基本语法结构。完成这个教程，你将充分了解 Dart 让自己获得更高的水平的专业知识。
 
-每当你想了解更多此语言的功能细节，请参考 [Dart Language Specification( Dart语言细则 )](https://www.dartlang.org/docs/spec/)。
+## 学习前提
+
+在你继续本教程之前，你必须对简单的术语有一定的了解，比如源码，文档等等。因为在你的组织下处理各级软件项目，如果你有软件工作的知识在软件开发和软件测试流程那是最好的。同时，你需要能够使用Dart提供的IDE工具进行Dart程序的开发。
