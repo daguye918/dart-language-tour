@@ -1,6 +1,6 @@
-##控制流语句
-你可以使用以下任何一种方式来控制你的Dart代码流： 
+# 控制流语句
 
+你可以使用以下任何一种方式来控制你的Dart代码流： 
   
 * if 和 else
 * for 循环
@@ -11,11 +11,11 @@
 
 你也可以通过使用try-catch和throw来改变控制流，具体说明请见[Exceptions](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#exceptions)部分。	
 
-##if 和else   
+## if 和else   
 
 Dart支持If语句以及可选的else语句，如样例所示，同样可见包含了[其他运算符](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#other-operators)（请见上部分）的条件表达式(?:)  
 
-~~~Dart 
+``` Dart 
      if(isRaining()){   
      you.brinRainCoat();    
      }else if (isSnowing()){   
@@ -23,71 +23,81 @@ Dart支持If语句以及可选的else语句，如样例所示，同样可见包�
      }else{    
      car.putTopDown();   
      }   
-~~~
-记住，它不同于JavaScript的地方是,Dart将所有不为True的值视作False，如想了解更多相关信息,请见[Booleans](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#booleans)部分。  
-##For 循环
+```
+
+记住，它不同于JavaScript的地方是,Dart将所有不为True的值视作False，如想了解更多相关信息,请见[Booleans](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#booleans)部分。 
+ 
+## For 循环
+
 你可以通过For循环实现重复声明，如下例： 
  
-~~~~Dart   
+``` Dart   
      var message = new StringBuffer("Dart is fun");
      for(var i =0 ;i<5;i++){
      message.write(“!”);
      }
-~~~~  
+```  
 
   
 Dart的for循环中的闭包能获取循环变量的值，避免了像Javascript中的常见陷阱，如下例，请思考下列代码：  
 
-~~~~Dart
+``` Dart
         var callbacks = [];
         for(var  i=0;i<2;i++){
         callbacks.add(() => print(i));
          }
         callbacks.forEach((c) =>c()):
-~~~~
+```
+
 正如我们所期待的，输出结果分别是0和1，但相反的情况可以在Javascript中见到，输出分别为2和2。  
 
 如果正在重申的变量是可重申的，你可以使用[forEach()方法](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart:core.Iterable#id_forEach)。如果你不需要知道重申计数器的值,使用forEach()是一个很好的选择：
 
-~~~~Dart 
+``` Dart 
        candidates.forEach((candidate) =>candidate.interview());  
-~~~~
+```
+
 可重申的类例如Lish以及Set也支持for-in形式的[重申](https://www.dartlang.org/docs/dart-up-and-running/ch03.html#iteration)： 
 
-~~~~Dart 
+``` Dart 
      var collection = [0,1,2];
      for(var x in collection){
      printf(x);
      }
-~~~~ 
+``` 
 
-##While 和do-while  
+## While 和do-while  
+
 while循环在开始之前就对条件进行求值运算： 
 
-~~~Dart 
+``` Dart 
     while(!isDone()){
     doSomething();
     }
-~~~    
+```
+   
 Do-while循环在循环开始之后才对条件进行求值运算：
 
-~~~Dart  
+``` Dart  
       do{
       printLine();
       }while(!atEndOfPage());
-~~~   
-##Break和continue
+``` 
+  
+## Break和continue
+
 使用break来结束循环： 
 
-~~~Dart 
+``` Dart 
      while(true){
      if(shutDownRequested())break;
      processIncomingRequests();
      }
-~~~
+```
+
 使用continue来跳过本次循环，进入下次循环：  
 
-~~~Dart
+``` Dart
      for(int i=0;i<candidates.length;i++){
      var candidate = candidates[i];
      if(candidate.yearsExperience <s){
@@ -95,24 +105,26 @@ Do-while循环在循环开始之后才对条件进行求值运算：
      }
      candidate.interview();
      }
-~~~    
+```
+   
 你或许可以写出一个不同的例子如果你正在使用例如List或者Set的[可重申类](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart:core.Iterable):  
 
-~~~Dart
+``` Dart
     candidates.where((c) => c.yearsExperience >=5)
     .forEach((c) => c.interview());
  
-~~~
+```
+
       
-##Switch和case
+## Switch和case
 Dart中Switch语句通过使用 == 来比较整型，字符串或者编译时间常量。被比较的对象必须都是同一个类（不能是它的任何一个子类型）中的实例，并且这个类不允许覆盖 ==.[枚举类型](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#enums)很适用于在Switch语句。
 
-  **提示**：Dart中的Switch语句是为限制条件而设计的，比如翻译器或者扫描器。
+    提示：Dart中的Switch语句是为限制条件而设计的，比如翻译器或者扫描器。
 
 作为规定，每一个不为空的case分句都以break语句结尾.其他正确的结尾方式也可以使用continue,throw或者return语句来实现。
 当没有任何case分句的条件符合时，使用default分句来执行代码：
 
-~~~Dart
+``` Dart
     var command = ‘OPEN’;
     switch (command){
     case ‘CLOSE’:
@@ -134,13 +146,12 @@ Dart中Switch语句通过使用 == 来比较整型，字符串或者编译时间
     executeUnknown();
     }
    
-   
-~~~   
+```   
     
  
 下列的例子漏写了case分句中的break语句，从而产生了一个错误：
 
-~~~Dart
+``` Dart
     var command = ‘OPEN’
     switch(command){
     case ‘OPEN’:
@@ -151,10 +162,11 @@ Dart中Switch语句通过使用 == 来比较整型，字符串或者编译时间
     executeClosed();
     break;
     }
-~~~  
+```
+  
 然而,Dart支持空的case分句，并允许使用从一个case到另一个case的贯穿形式：
 
-~~~Dart
+``` Dart
     var command = ‘CLOSED’;
     switch (command){
     case ‘CLOSED’://空的内容造成了贯穿.
@@ -163,10 +175,11 @@ Dart中Switch语句通过使用 == 来比较整型，字符串或者编译时间
     executeNowClosed();
     break;
     }
-~~~   
+```
+   
 如果你真的想用这种贯穿方式，你可以使用continue语句以及一个标签：
 
-~~~Dart
+``` Dart
     war command = ‘CLOSED’;
     switch(command){
     case ‘CLOSED’:
@@ -180,13 +193,15 @@ Dart中Switch语句通过使用 == 来比较整型，字符串或者编译时间
     executeNowClosed();
     break;
     }
-~~~ 
+```
+ 
 一个case分句可以含有局部变量，该局部变量仅仅只在此分句范围内可见。
 
-##Assert
+## Assert
+
 如果一个布尔条件值为false，使用assert语句来中断正常执行的代码。你可以在本教程中找到一些assert语句的样例。这里有一些例子： 
 
-~~~Dart
+``` Dart
      //确保这个变量不为空值.
     assert(text != null);
 
@@ -195,7 +210,8 @@ Dart中Switch语句通过使用 == 来比较整型，字符串或者编译时间
 
     //确保它是一个https协议类型的URL.
     assert(urlString.startsWith(‘https’));
-~~~
+```
    
-**提示**：Assert语句仅仅只能在调试模式下使用，在生产模式下没有任何作用。
+    提示：Assert语句仅仅只能在调试模式下使用，在生产模式下没有任何作用。
+    
 在assert语句后面的括号中，你可以加入任何表示布尔值或者函数的表达式。如果表达式的值或者函数返回值true，则assert语句成功并继续执行代码。如果值为false，则assert语句失败并抛出一个异常([an AssertionError](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart:core.AssertionError))。

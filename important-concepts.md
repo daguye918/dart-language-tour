@@ -1,7 +1,8 @@
 
-##重要的概念
+# 重要的概念
 
 当学习Dart语言的时候，把这些事实和概念记在脑子里：
+
 + 每个变量都是一个对象，每个对象是一个类的实例。甚至数字，函数，和null都是对象。所有对象都继承自[Object](http://api.dartlang.org/dart_core/Object.html)类
 
 + 指定静态类型（如num前面的例子中）讲清意图，用 tools 开启静态检查，但它是可选的。 （可能注意到当你调试代码，没有指定类型的变量会得到一个特殊的类型： dynamic ）
@@ -21,7 +22,8 @@
 + Dart tools可报告两类问题：警告(warning)和错误(error)。警告只是迹象表明，代码可能无法正常工作，但他们不会阻止程序的执行。错误可以是编译时或运行时,编译时的错误阻止代码执行;当代码执行时一个运行时的错误会导致一个[异常（exception）](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#exceptions)被抛出。
 
 + Dart有两种运行模式：生产 (production) 和检查 (checked) 。我们建议在检查模式开发和调试，并将其部署到生产模式。
- + Production mode是Dart程序一个速度优化的默认运行模式。Production mode忽略[断言语句（assert statements）](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#assert)和静态类型。
 
- + Checked mode 是开发人员友好的方式，可以帮助你在运行时捕捉一些类型的错误。例如，如果分配一个非数字来声明为一个 num 变量，然后在检查模式会抛出异常。
++ Production mode是Dart程序一个速度优化的默认运行模式。Production mode忽略[断言语句（assert statements）](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#assert)和静态类型。
+
++ Checked mode 是开发人员友好的方式，可以帮助你在运行时捕捉一些类型的错误。例如，如果分配一个非数字来声明为一个 num 变量，然后在检查模式会抛出异常。
 

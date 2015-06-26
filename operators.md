@@ -79,7 +79,7 @@ Dart 同时也支持前缀和后缀自增以及自减运算符。
 | --var | var = var - 1（表达式中相当于var - 1） |
 | var-- | var = var - 1（表达式中相当于var） |
 
-示例*
+**示例**
 
 ```
 var a, b;
@@ -116,8 +116,8 @@ assert(a != b); // -1 != 0
 
 如果想测试两个对象 x 和 y 是不是同一个对象，使用`==`运算符。（在少数情况下如果你想比较两个对象是否相等，需要使用[identical()](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart:core#id_identical)来替代`==`。)接下来将会说明`==`操作符是怎样起作用的：
 
-1. 如果 x 或者 y 为 null，两者都为 null 则返回 true， 只有其中一个为 null 则返回 false。
-2. 返回一个函数调用的结果：`x.==(y)`。（这个调用是正确的，像`==`这样的运算符实际上是由第一个操作数所调用的一个方法。你可以重写大部分运算符，关于这部分的内容你将在[Overridable operators](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#overridable-operators)中看到。
+- 1. 如果 x 或者 y 为 null，两者都为 null 则返回 true， 只有其中一个为 null 则返回 false。
+- 2. 返回一个函数调用的结果：`x.==(y)`。（这个调用是正确的，像`==`这样的运算符实际上是由第一个操作数所调用的一个方法。你可以重写大部分运算符，关于这部分的内容你将在[Overridable operators](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#overridable-operators)中看到。
 
 以下是关于等价和关系运算符的用法的示例：
 
@@ -135,6 +135,7 @@ assert(2 <= 3);
 `as`、`is` 和 `is!` 操作符在运行时用于检查类型非常便捷。
 
 | 运算符 | 含义 |
+| ----- | ---- |
 | as | 类型转换 |
 | is | 当对象是相应类型时返回 true |
 | as | 当对象不是相应类型时返回 true |
